@@ -1,0 +1,559 @@
+<!doctype html>
+<html class="no-js" lang="ru">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Премия</title>
+        <meta content="" name="description">
+        <meta content="" name="keywords">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta content="telephone=no" name="format-detection">
+        <!-- This make sence for mobile browsers. It means, that content has been optimized for mobile browsers -->
+        <meta name="HandheldFriendly" content="true">
+        <link href="static/css/main.css" rel="stylesheet" type="text/css">
+
+
+
+        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+        <link rel="manifest" href="site.webmanifest">
+        <link rel="mask-icon" href="safari-pinned-tab.svg" color="#141933">
+        <meta name="msapplication-TileColor" content="#141933">
+        <meta name="theme-color" content="#141933">
+
+        <!-- Swiper CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+        <!-- end Swiper CSS -->
+
+        <!-- Fancybox CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
+        <!-- end Fancybox CSS -->
+
+        <script>
+            (function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)
+        </script>
+
+
+        <!-- Facebook Pixel Code -->
+        <script>
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '2868177430135183');
+            fbq('track', 'PageView');
+        </script>
+        <noscript>
+            <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2868177430135183&ev=PageView&noscript=1" />
+        </noscript>
+        <!-- End Facebook Pixel Code -->
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-QR6V89LRZR"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+        
+            gtag('config', 'G-QR6V89LRZR');
+        </script>
+
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript">
+            (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+             m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+             (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+        
+             ym(56644492, "init", {
+                  clickmap:true,
+                  trackLinks:true,
+                  accurateTrackBounce:true
+             });
+        </script>
+        <noscript>
+            <div>
+                <img src="https://mc.yandex.ru/watch/56644492" style="position:absolute; left:-9999px;" alt="" />
+            </div>
+        </noscript>
+        <!-- /Yandex.Metrika counter -->
+    </head>
+
+    <body>
+
+
+        <div class="modal fade" id="nov-registration" tabindex="-1" role="dialog" aria-labelledby="nov-reg" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="nov-reg">Регистрация на участие в конкурсе</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body tab-content">
+
+                        <form enctype="multipart/form-data" id="startupForm" class="startupForm tab-pane fade show active" action="" method="post" role="tabpanel">
+                            <div class="form-group mb-4">
+                                <label class="control-label" for="sf_name">Фамилия Имя Отчество *</label>
+                                <input id="sf_name" type="text" class="form-control" name="name" placeholder="Фамилия Имя Отчество" required autocomplete="off">
+                            </div>
+                            <div class="d-flex justify-content-end align-items-start">
+                                <button id="reg_btn_next" type="submit" class="btn btn-danger" data-target="#filesForm" aria-selected="false">Далее
+                                </button>
+                            </div>
+                        </form>
+
+
+                        <form enctype="multipart/form-data" id="filesForm" action="" method="post" class="filesForm tab-pane fade" role="tabpanel">
+                            <div class="form-group mb-4">
+                                <input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
+                                <label for="nov_file_anketa">Анкета на участие в конкурсе</label>
+                                <input id="nov_file_anketa" name="userfile" class="form-control" type="file" data-multiple-caption="{count} selected" multiple required/>
+                            </div>
+                            <div class="form-group mb-4">
+                                <input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
+                                <label for="nov_file_ohrandoc">Копия охранного документа проекта: патент/свидетельство/договор о приобретении и/или внедрении изобретения <strong>(при наличии)</strong> 
+                                </label>
+                                <input id="nov_file_ohrandoc" name="userfile" class="form-control" type="file" data-multiple-caption="{count} selected" multiple/>
+                            </div>
+                            <div class="form-group mb-4">
+                                <input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
+                                <label for="nov_file_pres">Презентация с описанием проекта (рекомендуемый объем: не более 15 слайдов)
+                                </label>
+                                <input id="nov_file_pres" name="userfile" class="form-control" type="file" data-multiple-caption="{count} selected" multiple required/>
+                            </div>
+                            <div class="form-group mb-4">
+                                <input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
+                                <label for="nov_file_coauthors">В случае, если заявку подает коллектив или трудовой коллектив согласие соавторов на индивидуальное представление проекта в рамках конкурса согласно пункту 2.4 положения о конкурсе на присуждение премий Мэра Москвы «Новатор
+                                    Москвы» <strong>(при
+                                наличии)</strong> 
+                                </label>
+                                <input id="nov_file_coauthors" name="userfile" class="form-control" type="file" data-multiple-caption="{count} selected" multiple/>
+                            </div>
+                            <div class="form-group mb-4">
+                                <input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
+                                <label for="nov_file_hod">Ходатайство от юридического лица о выдвижении на участие в конкурсе проекта в случае, если заявка подается трудовым коллективом</label>
+                                <input id="nov_file_hod" name="userfile" class="form-control" type="file" data-multiple-caption="{count} selected" multiple required/>
+                            </div>
+                            <div class="form-group mb-4">
+                                <input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
+                                <label for="nov_file_card">Карточка предприятия юридического лица, ходатайствующего о выдвижении на участие трудового коллектива, если заявка подается трудовым коллективом</label>
+                                <input id="nov_file_card" name="userfile" class="form-control" type="file" data-multiple-caption="{count} selected" multiple required/>
+                            </div>
+                            <div class="form-group mb-4">
+                                <input type="hidden" name="MAX_FILE_SIZE" value="20000000" />
+                                <label for="nov_file_media">Фотографии и/или видеофайлы или иные материалы, подтверждающие работоспособность проекта, на электронном носителе информации <strong>(при наличии)</strong>
+                                </label>
+                                <input id="nov_file_media" name="userfile" class="form-control" type="file" data-multiple-caption="{count} selected" multiple/>
+                            </div>
+                            <div class="form-group mb-4">
+                                <input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
+                                <label for="nov_file_pers">Согласие на обработку персональных данных по форме, утвержденной организатором. В случае направления коллективной заявки указанное согласие на обработку персональных данных предоставляется каждым участником коллектива</label>
+                                <input id="nov_file_pers" name="userfile" class="form-control" type="file" data-multiple-caption="{count} selected" multiple required/>
+                            </div>
+                            <div class="form-group mb-4">
+                                <input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
+                                <label for="nov_file_dop">Дополнительные материалы не более 50 страниц формата А4 <strong>(при
+                            наличии)</strong>
+                                </label>
+                                <input id="nov_file_dop" name="userfile" class="form-control" type="file" data-multiple-caption="{count} selected" multiple/>
+                            </div>
+                            <div class="mt-4 text-right">
+                                <div class="btn-group">
+                                    <button id="reg_btn_back" type="button" class="btn btn-secondary" data-target="#startupForm" aria-selected="false">
+                                        <svg width="1.25rem" height="1.25rem" class="mr-2">
+                                            <use xlink:href="static/img/svg-sprite/svg-symbols.svg#chevron-thin-left" />
+                                        </svg>
+                                        Назад
+                                    </button>
+                                    <button id="reg_btn_send" type="submit" class="btn btn-danger ml-1">Отправить</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal" tabindex="-1" role="dialog" id="thanksgiving">
+            <div class="modal-dialog" style="margin-top: 20rem;" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Вы успешно зарегистрировались</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p style="text-align: center">Благодарим за регистрацию на премию "Новатор Москвы".
+                            <br>Мы свяжемся с вами в ближайшее время, чтобы проконсультировать по подаче заявки</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" tabindex="-1" role="dialog" id="ModalAnswer">
+            <div class="modal-dialog" style="margin-top: 20rem;" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ModalAnswerLabel">Вы успешно зарегистрировались</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" tabindex="-1" role="dialog" id="request">
+            <div class="modal-dialog request-modal modal-dialog-centered" role="document">
+                <div class="modal-content ">
+                    <div class="request-content__title">Для подачи заявки оставь данные</div>
+                    <form id="request-form" class="request-content__form">
+                        <div class="form-group">
+                            <label for="request-form__fio">ФИО</label>
+                            <input type="text" class="form-control" id="request-form__fio" name="fio" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="request-form__phone">Тел.</label>
+                            <input type="text" class="form-control" id="request-form__phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="request-form__email">E-mail</label>
+                            <input type="email" class="form-control" id="request-form__email" name="email" required>
+                        </div>
+                        <div class="form-group pt-2">
+                            <button class="btn btn-lg btn-danger" type="submit">Продолжить подачу заявки</button>
+                        </div>
+                        <div class="form-group pt-3">
+                            <div class="custom-control custom-checkbox mr-sm-2">
+                                <input type="checkbox" class="custom-control-input" id="customControlAutosizing" required>
+                                <label class="custom-control-label" for="customControlAutosizing">Я принимаю условие
+                                    <a target="_blank" href="https://innoagency.ru/_soglashenie_pd.pdf">соглашения об обработке данных</a>
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <main class="page">
+            <section class="page__wrapper section-videogal" id="video-gal">
+                <div class="container-fluid ">
+                    <h2 class="title pt-0">Видео</h2>
+                    <div class="row vgallery">
+                        <div class="col-lg-6">
+                            <div class="gallery-video" data-title="Устройство защиты от искрения/дугового пробоя (УЗИ с/УЗДП)">
+                                <a data-src="https://www.youtube.com/embed/Tz_sHEvWGCw" data-fancybox="videoGroup" data-type="iframe" data-preload="false" data-width="100%">
+                                    <img src="//img.youtube.com/vi/Tz_sHEvWGCw/maxresdefault.jpg">
+                                    <div class="play-href"></div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="gallery-video" data-title="Аварийно спасательные средства эвакуации и спасение маломобильных людей с высоты при пожаре">
+                                <a data-src="https://www.youtube.com/embed/qQw3yTMfWWE" data-fancybox="videoGroup" data-type="iframe" data-preload="false" data-width="100%">
+                                    <img src="//img.youtube.com/vi/qQw3yTMfWWE/maxresdefault.jpg">
+                                    <div class="play-href"></div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="gallery-video" data-title="Музеторий">
+                                <a data-src="https://www.youtube.com/embed/wLel-LdOkPw" data-fancybox="videoGroup" data-type="iframe" data-preload="false" data-width="100%">
+                                    <img src="//img.youtube.com/vi/wLel-LdOkPw/maxresdefault.jpg">
+                                    <div class="play-href"></div>
+
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="gallery-video" data-title="Фудшеринг">
+                                <a data-src="https://www.youtube.com/embed/T-j4574mr3Y" data-fancybox="videoGroup" data-type="iframe" data-preload="false" data-width="100%">
+                                    <img src="//img.youtube.com/vi/T-j4574mr3Y/maxresdefault.jpg">
+                                    <div class="play-href"></div>
+
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="gallery-video" data-title="Биологический препарат для биодеградации метанола в окружающей среде">
+                                <a data-src="https://www.youtube.com/embed/dRqGO0nhFbo" data-fancybox="videoGroup" data-type="iframe" data-preload="false" data-width="100%">
+                                    <img src="//img.youtube.com/vi/dRqGO0nhFbo/maxresdefault.jpg">
+                                    <div class="play-href"></div>
+
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="gallery-video" data-title="Создание биотерапевтического препарата hDll4-hFc на основе трап технологии">
+                                <a data-src="https://www.youtube.com/embed/6y4yeRHB-6U" data-fancybox="videoGroup" data-type="iframe" data-preload="false" data-width="100%">
+                                    <img src="//img.youtube.com/vi/6y4yeRHB-6U/maxresdefault.jpg">
+                                    <div class="play-href"></div>
+
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="gallery-video" data-title="Производство оригиналов компьютерно-синтезированных голограмм">
+                                <a data-src="https://www.youtube.com/embed/oDSeFGbvqYo" data-fancybox="videoGroup" data-type="iframe" data-preload="false" data-width="100%">
+                                    <img src="//img.youtube.com/vi/oDSeFGbvqYo/maxresdefault.jpg">
+                                    <div class="play-href"></div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="gallery-video" data-title="ФармПринт - технологии дозирования и персонализации фармацевтики">
+                                <a data-src="https://www.youtube.com/embed/KVBnz8C8Kq0" data-fancybox="videoGroup" data-type="iframe" data-preload="false" data-width="100%">
+                                    <img src="//img.youtube.com/vi/KVBnz8C8Kq0/maxresdefault.jpg">
+                                    <div class="play-href"></div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="gallery-video" data-title="Мио-интерфейс">
+                                <a data-src="https://youtu.be/CwVDFDpQBSI" data-fancybox="videoGroup" data-type="iframe" data-preload="false" data-width="100%">
+                                    <img src="//img.youtube.com/vi/CwVDFDpQBSI/maxresdefault.jpg">
+                                    <div class="play-href"></div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="gallery-video" data-title="Получение чистого водорода для автотранспорта">
+                                <a data-src="https://youtu.be/sbqK3othXUw" data-fancybox="videoGroup" data-type="iframe" data-preload="false" data-width="100%">
+                                    <img src="//img.youtube.com/vi/sbqK3othXUw/maxresdefault.jpg">
+                                    <div class="play-href"></div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="gallery-video" data-title="Трубопроводная задвижка с пьезоприводом, герметичная к внешней среде">
+                                <a data-src="https://youtu.be/3SRhPVviECQ" data-fancybox="videoGroup" data-type="iframe" data-preload="false" data-width="100%">
+                                    <img src="//img.youtube.com/vi/3SRhPVviECQ/maxresdefault.jpg">
+                                    <div class="play-href"></div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="gallery-video" data-title="Тормозное и пневматическое оборудование электропоезда типа ЭС2Г " Ласточка "">
+                                <a data-src="https://youtu.be/T9kNSLqL5vg" data-fancybox="videoGroup" data-type="iframe" data-preload="false" data-width="100%">
+                                    <img src="//img.youtube.com/vi/T9kNSLqL5vg/maxresdefault.jpg">
+                                    <div class="play-href"></div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="gallery-video" data-title="ЭлектроNet - энергоучет нового поколения и организация интернета вещей городского хозяйства">
+                                <a data-src="https://youtu.be/xvu4FE5rka8" data-fancybox="videoGroup" data-type="iframe" data-preload="false" data-width="100%">
+                                    <img src="//img.youtube.com/vi/xvu4FE5rka8/maxresdefault.jpg">
+                                    <div class="play-href"></div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="gallery-video" data-title="Инновационная система высокоскоростного движения в тоннелях и трубопроводах для крупных городов">
+                                <a data-src="https://youtu.be/N8OUNw_pWaU" data-fancybox="videoGroup" data-type="iframe" data-preload="false" data-width="100%">
+                                    <img src="//img.youtube.com/vi/N8OUNw_pWaU/maxresdefault.jpg">
+                                    <div class="play-href"></div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="gallery-video" data-title="Инновационная технология возведения кровельных покрытий с модульными системами озеленения">
+                                <a data-src="https://youtu.be/5WZEqH3B5ug" data-fancybox="videoGroup" data-type="iframe" data-preload="false" data-width="100%">
+                                    <img src="//img.youtube.com/vi/5WZEqH3B5ug/maxresdefault.jpg">
+                                    <div class="play-href"></div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="gallery-video" data-title="Карголинк">
+                                <a data-src="https://youtu.be/kCdx4a1bqqE" data-fancybox="videoGroup" data-type="iframe" data-preload="false" data-width="100%">
+                                    <img src="//img.youtube.com/vi/kCdx4a1bqqE/maxresdefault.jpg">
+                                    <div class="play-href"></div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="gallery-video" data-title="Инновационная система инструментации всех этапов эндодонтического для лечения каналов зуба">
+                                <a data-src="https://youtu.be/_foGEGx-hY4" data-fancybox="videoGroup" data-type="iframe" data-preload="false" data-width="100%">
+                                    <img src="//img.youtube.com/vi/_foGEGx-hY4/maxresdefault.jpg">
+                                    <div class="play-href"></div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="gallery-video" data-title="Измерительные комплексы геометрических параметров колесных пар подвижного состава «3DWheel»">
+                                <a data-src="https://youtu.be/JGxK5S5DnxQ" data-fancybox="videoGroup" data-type="iframe" data-preload="false" data-width="100%">
+                                    <img src="//img.youtube.com/vi/JGxK5S5DnxQ/maxresdefault.jpg">
+                                    <div class="play-href"></div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="gallery-video" data-title="Первый в мире ген-активированный материал для костной пластики: от идеи до внедрения">
+                                <a data-src="https://youtu.be/Ub41ynoawXI" data-fancybox="videoGroup" data-type="iframe" data-preload="false" data-width="100%">
+                                    <img src="//img.youtube.com/vi/Ub41ynoawXI/maxresdefault.jpg">
+                                    <div class="play-href"></div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="gallery-video" data-title="Программно-аналитический комплекс АКИМ для проектирования и оценки эффективности работы объекта">
+                                <a data-src="https://youtu.be/e0CdGBQ7Hbc" data-fancybox="videoGroup" data-type="iframe" data-preload="false" data-width="100%">
+                                    <img src="//img.youtube.com/vi/e0CdGBQ7Hbc/maxresdefault.jpg">
+                                    <div class="play-href"></div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="gallery-video" data-title="«WONDER LAB» - моющие и чистящие средства с применением биомикрогелей">
+                                <a data-src="https://youtu.be/8fv_i1mZ3bo" data-fancybox="videoGroup" data-type="iframe" data-preload="false" data-width="100%">
+                                    <img src="//img.youtube.com/vi/8fv_i1mZ3bo/maxresdefault.jpg">
+                                    <div class="play-href"></div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="gallery-video" data-title="«Зелёные» технологии в строительстве подземной гидроизоляции искусственных сооружений мегаполиса">
+                                <a data-src="https://youtu.be/ZpY9kaqLPEw" data-fancybox="videoGroup" data-type="iframe" data-preload="false" data-width="100%">
+                                    <img src="//img.youtube.com/vi/ZpY9kaqLPEw/maxresdefault.jpg">
+                                    <div class="play-href"></div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="gallery-video" data-title="Биомедицинская микроскопия нанометрового разрешения живой материи: разработка и выпуск аппаратуры">
+                                <a data-src="https://youtu.be/9QSlLpB-_CM" data-fancybox="videoGroup" data-type="iframe" data-preload="false" data-width="100%">
+                                    <img src="//img.youtube.com/vi/9QSlLpB-_CM/maxresdefault.jpg">
+                                    <div class="play-href"></div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="gallery-video" data-title="БЛИНДОЗЕР">
+                                <a data-src="https://youtu.be/8tFvmu_YQsI" data-fancybox="videoGroup" data-type="iframe" data-preload="false" data-width="100%">
+                                    <img src="//img.youtube.com/vi/8tFvmu_YQsI/maxresdefault.jpg">
+                                    <div class="play-href"></div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="gallery-video" data-title="Рекультивация мусорных полигонов и переработка ТКО комплексом гидросепарации «СВЕТ 2»">
+                                <a data-src="https://youtu.be/_Tj7dLsRtCc" data-fancybox="videoGroup" data-type="iframe" data-preload="false" data-width="100%">
+                                    <img src="//img.youtube.com/vi/_Tj7dLsRtCc/maxresdefault.jpg">
+                                    <div class="play-href"></div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="gallery-video" data-title="Блочно-модульные котельные для устройства вакуум-паровых и субатмосферных систем отопления">
+                                <a data-src="https://youtu.be/KkofgU3wi_Q" data-fancybox="videoGroup" data-type="iframe" data-preload="false" data-width="100%">
+                                    <img src="//img.youtube.com/vi/KkofgU3wi_Q/maxresdefault.jpg">
+                                    <div class="play-href"></div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="gallery-video" data-title="«СПАРС» - гражданское высотное решение (способ и устройства)">
+                                <a data-src="https://youtu.be/k2PaXZTqYzc" data-fancybox="videoGroup" data-type="iframe" data-preload="false" data-width="100%">
+                                    <img src="//img.youtube.com/vi/k2PaXZTqYzc/maxresdefault.jpg">
+                                    <div class="play-href"></div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="gallery-video" data-title="Система предупреждения протечек Изотест-Контролит">
+                                <a data-src="https://youtu.be/NUwUF-lpmVc" data-fancybox="videoGroup" data-type="iframe" data-preload="false" data-width="100%">
+                                    <img src="//img.youtube.com/vi/NUwUF-lpmVc/maxresdefault.jpg">
+                                    <div class="play-href"></div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="gallery-video" data-title="Система климата городского электробуса (СК ГЭ) «ЛАТРАК»">
+                                <a data-src="https://youtu.be/W6MJ3GZHLtA" data-fancybox="videoGroup" data-type="iframe" data-preload="false" data-width="100%">
+                                    <img src="//img.youtube.com/vi/W6MJ3GZHLtA/maxresdefault.jpg">
+                                    <div class="play-href"></div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="gallery-video" data-title="Теплообменный аппарат радиально-спирального типа конструкции ФАСТ ИНЖИНИРИНГ">
+                                <a data-src="https://youtu.be/C6eb8Q8QA2Q" data-fancybox="videoGroup" data-type="iframe" data-preload="false" data-width="100%">
+                                    <img src="//img.youtube.com/vi/C6eb8Q8QA2Q/maxresdefault.jpg">
+                                    <div class="play-href"></div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="gallery-video" data-title="3d принтер с нестандартными размерами области печати для печати воскоподобным пластиком">
+                                <a data-src="https://youtu.be/DPoaBprhr5k" data-fancybox="videoGroup" data-type="iframe" data-preload="false" data-width="100%">
+                                    <img src="//img.youtube.com/vi/DPoaBprhr5k/maxresdefault.jpg">
+                                    <div class="play-href"></div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="gallery-video" data-title="Goodio - платформа персонализированных товарных рекомендаций для интернет магазинов">
+                                <a data-src="https://youtu.be/YhM1rexXddY" data-fancybox="videoGroup" data-type="iframe" data-preload="false" data-width="100%">
+                                    <img src="//img.youtube.com/vi/YhM1rexXddY/maxresdefault.jpg">
+                                    <div class="play-href"></div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="gallery-video" data-title="Gorserv">
+                                <a data-src="https://youtu.be/yx4ai2Bp-Lw" data-fancybox="videoGroup" data-type="iframe" data-preload="false" data-width="100%">
+                                    <img src="//img.youtube.com/vi/yx4ai2Bp-Lw/maxresdefault.jpg">
+                                    <div class="play-href"></div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="gallery-video" data-title="Oncobox - рекомендательная тест-система для подбора терапии онкозаболеваний">
+                                <a data-src="https://youtu.be/_CTKxZ-Sy3k" data-fancybox="videoGroup" data-type="iframe" data-preload="false" data-width="100%">
+                                    <img src="//img.youtube.com/vi/_CTKxZ-Sy3k/maxresdefault.jpg">
+                                    <div class="play-href"></div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="gallery-video" data-title="Автоматизированные вертикальные фермы Ifarm">
+                                <a data-src="https://youtu.be/S2_GtwnWHHQ" data-fancybox="videoGroup" data-type="iframe" data-preload="false" data-width="100%">
+                                    <img src="//img.youtube.com/vi/S2_GtwnWHHQ/maxresdefault.jpg">
+                                    <div class="play-href"></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Swiper JS -->
+        <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+        <!-- end Swiper JS -->
+
+        <!-- Fancybox JS -->
+        <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+        <!-- end Fancybox JS -->
+
+        <!-- JQuery -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <!-- end JQuery -->
+
+
+        <!-- Main scripts. You can replace it, but I recommend you to leave it here     -->
+        <script src="static/js/main.js"></script>
+
+
+    </body>
+
+</html>

@@ -1,0 +1,377 @@
+<!doctype html>
+<html class="no-js" lang="ru">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Премия</title>
+        <meta content="" name="description">
+        <meta content="" name="keywords">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta content="telephone=no" name="format-detection">
+        <!-- This make sence for mobile browsers. It means, that content has been optimized for mobile browsers -->
+        <meta name="HandheldFriendly" content="true">
+        <link href="static/css/main.css" rel="stylesheet" type="text/css">
+
+
+
+        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+        <link rel="manifest" href="site.webmanifest">
+        <link rel="mask-icon" href="safari-pinned-tab.svg" color="#141933">
+        <meta name="msapplication-TileColor" content="#141933">
+        <meta name="theme-color" content="#141933">
+
+        <!-- Swiper CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+        <!-- end Swiper CSS -->
+
+        <!-- Fancybox CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
+        <!-- end Fancybox CSS -->
+
+        <script>
+            (function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)
+        </script>
+
+
+        <!-- Facebook Pixel Code -->
+        <script>
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '2868177430135183');
+            fbq('track', 'PageView');
+        </script>
+        <noscript>
+            <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2868177430135183&ev=PageView&noscript=1" />
+        </noscript>
+        <!-- End Facebook Pixel Code -->
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-QR6V89LRZR"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+        
+            gtag('config', 'G-QR6V89LRZR');
+        </script>
+
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript">
+            (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+             m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+             (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+        
+             ym(56644492, "init", {
+                  clickmap:true,
+                  trackLinks:true,
+                  accurateTrackBounce:true
+             });
+        </script>
+        <noscript>
+            <div>
+                <img src="https://mc.yandex.ru/watch/56644492" style="position:absolute; left:-9999px;" alt="" />
+            </div>
+        </noscript>
+        <!-- /Yandex.Metrika counter -->
+    </head>
+
+    <body>
+
+
+        <div class="modal fade" id="nov-registration" tabindex="-1" role="dialog" aria-labelledby="nov-reg" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="nov-reg">Регистрация на участие в конкурсе</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body tab-content">
+
+                        <form enctype="multipart/form-data" id="startupForm" class="startupForm tab-pane fade show active" action="" method="post" role="tabpanel">
+                            <div class="form-group mb-4">
+                                <label class="control-label" for="sf_name">Фамилия Имя Отчество *</label>
+                                <input id="sf_name" type="text" class="form-control" name="name" placeholder="Фамилия Имя Отчество" required autocomplete="off">
+                            </div>
+                            <div class="d-flex justify-content-end align-items-start">
+                                <button id="reg_btn_next" type="submit" class="btn btn-danger" data-target="#filesForm" aria-selected="false">Далее
+                                </button>
+                            </div>
+                        </form>
+
+
+                        <form enctype="multipart/form-data" id="filesForm" action="" method="post" class="filesForm tab-pane fade" role="tabpanel">
+                            <div class="form-group mb-4">
+                                <input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
+                                <label for="nov_file_anketa">Анкета на участие в конкурсе</label>
+                                <input id="nov_file_anketa" name="userfile" class="form-control" type="file" data-multiple-caption="{count} selected" multiple required/>
+                            </div>
+                            <div class="form-group mb-4">
+                                <input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
+                                <label for="nov_file_ohrandoc">Копия охранного документа проекта: патент/свидетельство/договор о приобретении и/или внедрении изобретения <strong>(при наличии)</strong> 
+                                </label>
+                                <input id="nov_file_ohrandoc" name="userfile" class="form-control" type="file" data-multiple-caption="{count} selected" multiple/>
+                            </div>
+                            <div class="form-group mb-4">
+                                <input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
+                                <label for="nov_file_pres">Презентация с описанием проекта (рекомендуемый объем: не более 15 слайдов)
+                                </label>
+                                <input id="nov_file_pres" name="userfile" class="form-control" type="file" data-multiple-caption="{count} selected" multiple required/>
+                            </div>
+                            <div class="form-group mb-4">
+                                <input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
+                                <label for="nov_file_coauthors">В случае, если заявку подает коллектив или трудовой коллектив согласие соавторов на индивидуальное представление проекта в рамках конкурса согласно пункту 2.4 положения о конкурсе на присуждение премий Мэра Москвы «Новатор
+                                    Москвы» <strong>(при
+                                наличии)</strong> 
+                                </label>
+                                <input id="nov_file_coauthors" name="userfile" class="form-control" type="file" data-multiple-caption="{count} selected" multiple/>
+                            </div>
+                            <div class="form-group mb-4">
+                                <input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
+                                <label for="nov_file_hod">Ходатайство от юридического лица о выдвижении на участие в конкурсе проекта в случае, если заявка подается трудовым коллективом</label>
+                                <input id="nov_file_hod" name="userfile" class="form-control" type="file" data-multiple-caption="{count} selected" multiple required/>
+                            </div>
+                            <div class="form-group mb-4">
+                                <input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
+                                <label for="nov_file_card">Карточка предприятия юридического лица, ходатайствующего о выдвижении на участие трудового коллектива, если заявка подается трудовым коллективом</label>
+                                <input id="nov_file_card" name="userfile" class="form-control" type="file" data-multiple-caption="{count} selected" multiple required/>
+                            </div>
+                            <div class="form-group mb-4">
+                                <input type="hidden" name="MAX_FILE_SIZE" value="20000000" />
+                                <label for="nov_file_media">Фотографии и/или видеофайлы или иные материалы, подтверждающие работоспособность проекта, на электронном носителе информации <strong>(при наличии)</strong>
+                                </label>
+                                <input id="nov_file_media" name="userfile" class="form-control" type="file" data-multiple-caption="{count} selected" multiple/>
+                            </div>
+                            <div class="form-group mb-4">
+                                <input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
+                                <label for="nov_file_pers">Согласие на обработку персональных данных по форме, утвержденной организатором. В случае направления коллективной заявки указанное согласие на обработку персональных данных предоставляется каждым участником коллектива</label>
+                                <input id="nov_file_pers" name="userfile" class="form-control" type="file" data-multiple-caption="{count} selected" multiple required/>
+                            </div>
+                            <div class="form-group mb-4">
+                                <input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
+                                <label for="nov_file_dop">Дополнительные материалы не более 50 страниц формата А4 <strong>(при
+                            наличии)</strong>
+                                </label>
+                                <input id="nov_file_dop" name="userfile" class="form-control" type="file" data-multiple-caption="{count} selected" multiple/>
+                            </div>
+                            <div class="mt-4 text-right">
+                                <div class="btn-group">
+                                    <button id="reg_btn_back" type="button" class="btn btn-secondary" data-target="#startupForm" aria-selected="false">
+                                        <svg width="1.25rem" height="1.25rem" class="mr-2">
+                                            <use xlink:href="static/img/svg-sprite/svg-symbols.svg#chevron-thin-left" />
+                                        </svg>
+                                        Назад
+                                    </button>
+                                    <button id="reg_btn_send" type="submit" class="btn btn-danger ml-1">Отправить</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal" tabindex="-1" role="dialog" id="thanksgiving">
+            <div class="modal-dialog" style="margin-top: 20rem;" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Вы успешно зарегистрировались</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p style="text-align: center">Благодарим за регистрацию на премию "Новатор Москвы".
+                            <br>Мы свяжемся с вами в ближайшее время, чтобы проконсультировать по подаче заявки</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" tabindex="-1" role="dialog" id="ModalAnswer">
+            <div class="modal-dialog" style="margin-top: 20rem;" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ModalAnswerLabel">Вы успешно зарегистрировались</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" tabindex="-1" role="dialog" id="request">
+            <div class="modal-dialog request-modal modal-dialog-centered" role="document">
+                <div class="modal-content ">
+                    <div class="request-content__title">Для подачи заявки оставь данные</div>
+                    <form id="request-form" class="request-content__form">
+                        <div class="form-group">
+                            <label for="request-form__fio">ФИО</label>
+                            <input type="text" class="form-control" id="request-form__fio" name="fio" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="request-form__phone">Тел.</label>
+                            <input type="text" class="form-control" id="request-form__phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="request-form__email">E-mail</label>
+                            <input type="email" class="form-control" id="request-form__email" name="email" required>
+                        </div>
+                        <div class="form-group pt-2">
+                            <button class="btn btn-lg btn-danger" type="submit">Продолжить подачу заявки</button>
+                        </div>
+                        <div class="form-group pt-3">
+                            <div class="custom-control custom-checkbox mr-sm-2">
+                                <input type="checkbox" class="custom-control-input" id="customControlAutosizing" required>
+                                <label class="custom-control-label" for="customControlAutosizing">Я принимаю условие
+                                    <a target="_blank" href="https://innoagency.ru/_soglashenie_pd.pdf">соглашения об обработке данных</a>
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <main class="page">
+            <section class="page__wrapper section-photogal" id="photo-gal">
+                <div class="container-fluid ">
+                    <h2 class="title pt-0">фото</h2>
+                    <div class="pgallery">
+                        <div class="gallery-photo">
+                            <a data-src="static/img/content/gallery/photo/photo1.jpg" data-fancybox="photoGroup" style="background-image: url('static/img/content/gallery/photo/photo1.jpg')">
+                            </a>
+                        </div>
+                        <div class="gallery-photo">
+                            <a data-src="static/img/content/gallery/photo/photo1.jpg" data-fancybox="photoGroup" style="background-image: url('static/img/content/gallery/photo/photo2.jpg')">
+                            </a>
+                        </div>
+                        <div class="gallery-photo">
+                            <a data-src="static/img/content/gallery/photo/photo1.jpg" data-fancybox="photoGroup" style="background-image: url('static/img/content/gallery/photo/photo3.jpg')">
+                            </a>
+                        </div>
+                        <div class="gallery-photo">
+                            <a data-src="static/img/content/gallery/photo/photo1.jpg" data-fancybox="photoGroup" style="background-image: url('static/img/content/gallery/photo/photo4.jpg')">
+                            </a>
+                        </div>
+                        <div class="gallery-photo">
+                            <a data-src="static/img/content/gallery/photo/photo1.jpg" data-fancybox="photoGroup" style="background-image: url('static/img/content/gallery/photo/photo5.jpg')">
+                            </a>
+                        </div>
+
+                        <div class="gallery-photo">
+                            <a data-src="static/img/content/gallery/photo/photo1.jpg" data-fancybox="photoGroup" style="background-image: url('static/img/content/gallery/photo/photo6.jpg')">
+                            </a>
+                        </div>
+                        <div class="gallery-photo">
+                            <a data-src="static/img/content/gallery/photo/photo1.jpg" data-fancybox="photoGroup" style="background-image: url('static/img/content/gallery/photo/photo7.jpg')">
+                            </a>
+                        </div>
+                        <div class="gallery-photo">
+                            <a data-src="static/img/content/gallery/photo/photo1.jpg" data-fancybox="photoGroup" style="background-image: url('static/img/content/gallery/photo/photo8.jpg')">
+                            </a>
+                        </div>
+                        <div class="gallery-photo">
+                            <a data-src="static/img/content/gallery/photo/photo1.jpg" data-fancybox="photoGroup" style="background-image: url('static/img/content/gallery/photo/photo9.jpg')">
+                            </a>
+                        </div>
+                        <div class="gallery-photo">
+                            <a data-src="static/img/content/gallery/photo/photo1.jpg" data-fancybox="photoGroup" style="background-image: url('static/img/content/gallery/photo/photo10.jpg')">
+                            </a>
+                        </div>
+                        <div class="gallery-photo">
+                            <a data-src="static/img/content/gallery/photo/photo1.jpg" data-fancybox="photoGroup" style="background-image: url('static/img/content/gallery/photo/photo11.jpg')">
+                            </a>
+                        </div>
+                        <div class="gallery-photo">
+                            <a data-src="static/img/content/gallery/photo/photo1.jpg" data-fancybox="photoGroup" style="background-image: url('static/img/content/gallery/photo/photo12.jpg')">
+                            </a>
+                        </div>
+                        <div class="gallery-photo">
+                            <a data-src="static/img/content/gallery/photo/photo1.jpg" data-fancybox="photoGroup" style="background-image: url('static/img/content/gallery/photo/photo13.jpg')">
+                            </a>
+                        </div>
+                        <div class="gallery-photo">
+                            <a data-src="static/img/content/gallery/photo/photo1.jpg" data-fancybox="photoGroup" style="background-image: url('static/img/content/gallery/photo/photo14.jpg')">
+                            </a>
+                        </div>
+                        <div class="gallery-photo">
+                            <a data-src="static/img/content/gallery/photo/photo1.jpg" data-fancybox="photoGroup" style="background-image: url('static/img/content/gallery/photo/photo15.jpg')">
+                            </a>
+                        </div>
+                        <div class="gallery-photo">
+                            <a data-src="static/img/content/gallery/photo/photo1.jpg" data-fancybox="photoGroup" style="background-image: url('static/img/content/gallery/photo/photo7.jpg')">
+                            </a>
+                        </div>
+                        <div class="gallery-photo">
+                            <a data-src="static/img/content/gallery/photo/photo1.jpg" data-fancybox="photoGroup" style="background-image: url('static/img/content/gallery/photo/photo16.jpg')">
+                            </a>
+                        </div>
+                        <div class="gallery-photo">
+                            <a data-src="static/img/content/gallery/photo/photo1.jpg" data-fancybox="photoGroup" style="background-image: url('static/img/content/gallery/photo/photo17.jpg')">
+                            </a>
+                        </div>
+                        <div class="gallery-photo">
+                            <a data-src="static/img/content/gallery/photo/photo1.jpg" data-fancybox="photoGroup" style="background-image: url('static/img/content/gallery/photo/photo18.jpg')">
+                            </a>
+                        </div>
+                        <div class="gallery-photo">
+                            <a data-src="static/img/content/gallery/photo/photo1.jpg" data-fancybox="photoGroup" style="background-image: url('static/img/content/gallery/photo/photo19.jpg')">
+                            </a>
+                        </div>
+                        <div class="gallery-photo">
+                            <a data-src="static/img/content/gallery/photo/photo1.jpg" data-fancybox="photoGroup" style="background-image: url('static/img/content/gallery/photo/photo20.jpg')">
+                            </a>
+                        </div>
+                        <div class="gallery-photo">
+                            <a data-src="static/img/content/gallery/photo/photo1.jpg" data-fancybox="photoGroup" style="background-image: url('static/img/content/gallery/photo/photo21.jpg')">
+                            </a>
+                        </div>
+                        <div class="gallery-photo">
+                            <a data-src="static/img/content/gallery/photo/photo1.jpg" data-fancybox="photoGroup" style="background-image: url('static/img/content/gallery/photo/photo22.jpg')">
+                            </a>
+                        </div>
+                        <div class="gallery-photo">
+                            <a data-src="static/img/content/gallery/photo/photo1.jpg" data-fancybox="photoGroup" style="background-image: url('static/img/content/gallery/photo/photo23.jpg')">
+                            </a>
+                        </div>
+                        <div class="gallery-photo">
+                            <a data-src="static/img/content/gallery/photo/photo1.jpg" data-fancybox="photoGroup" style="background-image: url('static/img/content/gallery/photo/photo24.jpg')">
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Swiper JS -->
+        <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+        <!-- end Swiper JS -->
+
+        <!-- Fancybox JS -->
+        <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+        <!-- end Fancybox JS -->
+
+        <!-- JQuery -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <!-- end JQuery -->
+
+
+        <!-- Main scripts. You can replace it, but I recommend you to leave it here     -->
+        <script src="static/js/main.js"></script>
+
+
+    </body>
+
+</html>
